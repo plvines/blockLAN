@@ -15,6 +15,11 @@ function onBeforeRequest(requestDetails) {
     var url = requestDetails.url;
     if (re.test(url)){
         console.log("BLOCKING: " + url);
+
+        new Notification("Blocked a weird request", {
+            body: 'Tried to connect to local IP:\n' + url.split(re)[1] 
+            });
+        
         return {'cancel': true};
     }
 
