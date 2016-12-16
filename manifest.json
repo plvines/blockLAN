@@ -1,0 +1,22 @@
+{
+    "incognito":"split",
+    "name": "blockLAN", 
+    "manifest_version": 2, 
+    "version": "0.0.1",
+    "background": {
+        "persistent": true, 
+        "scripts": [
+            "Background.js"
+        ]
+    }, 
+    "permissions": [
+        "webRequest", 
+        "webRequestBlocking",
+        "http://*/*",
+        "https://*/*",
+        "ftp://*/*"
+    ], 
+    "browser_action": {
+        "default_title": "blockLAN"
+    }
+}
