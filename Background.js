@@ -3,8 +3,9 @@ initialize();
 
 // 10.*
 // 192.168.*
+// 172.16.*
 // *.local
-const re = /(^.*:\/\/((192\.168\.\d+\.\d+)|(10\.\d+\.\d+\.\d+)|(\.local[\.,\/])|(\.local$)))($|\/.*|:\d+\/.*)/;
+const re = /(^.*:\/\/((192\.168\.\d+\.\d+)|(10\.\d+\.\d+\.\d+)|(172\.16\.\d+\.\d+)|(\.local[\.,\/])|(\.local$)))($|\/.*|:\d+\/.*)/;
 var existingTimer = null;
 function initialize() {
     addBlockerListener();

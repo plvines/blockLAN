@@ -20,5 +20,6 @@
     "browser_action": {
         "default_title": "blockLAN",
         "default_popup": "Popup.html"
-    }
+    },
+    "description": "Blocks LAN requests to protect your router."
 }
