@@ -11,12 +11,19 @@ function initialize() {
     chrome.extension.onRequest.addListener(tempDisableListener);
 }
 
+/* 
+   Adds the onBeforeRequest listener
+*/
 function addBlockerListener() {
     chrome.webRequest.onBeforeRequest.addListener(onBeforeRequest,
                                                   { urls: ["<all_urls>"] },
                                                   ["blocking"]);
 }
 
+/*
+    Temporary disables blocking by removing the onBeforeRequest
+    listener, then renables it after 5 minutes.
+*/
 function tempDisableListener(request) {
     if (request.type == 'tempDisable') {
         chrome.webRequest.onBeforeRequest.removeListener(onBeforeRequest);
@@ -28,6 +35,9 @@ function tempDisableListener(request) {
     }
 }
 
+/*
+    Blocks requests for URLs that match the regular expression
+*/
 function onBeforeRequest(requestDetails) {
     var url = requestDetails.url;
     if (re.test(url)){
