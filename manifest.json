@@ -18,6 +18,7 @@
         "notifications"
     ], 
     "browser_action": {
-        "default_title": "blockLAN"
+        "default_title": "blockLAN",
+        "default_popup": "Popup.html"
     }
 }
